@@ -1,0 +1,323 @@
+###############RootFileNames################
+HistogramFileName={basename}.root						#TheNameOfTheFileThatStoresTheHistograms
+OriginalEventFileName=OrigEvent_{basename}.root			#TheNameOfTheFileThatStoresTheTreeWithOriginalEvent
+SignalAnalyzedEventFileName=SigAnaEvent_{basename}.root	#TheNameOfTheFileThatStoresTheTreeWithSignalAnalyzedEvent
+SortedEventFileName=SortEvent_{basename}.root			#TheNameOfTheFileThatStoresTheTreeWithSortedEvent
+LogFileName=log.txt
+DumpBinary=1
+BinaryFileName={basename}.hit
+#########################GeneralInfos##########################
+ViewMode=0					#0:DoNothing,1:ShowRawEvent,2:ShowAdjustmentToolforCFD
+UsedMethodForPeakFinding=1	#0:CoM,1:CFD,2:Don'tFindPeaks
+FillPulsHistos=0			#0:DoNothing,1:CreateTheMeanPulsHistos
+WriteCalibrationStuff=0		#0:DoNotWriteFilesWithCalibration,1:WriteCalibrationFiles
+BaselineCorrection=0
+IntervalOfTerminalCounterUpdate=10
+
+#####################################SetUpChannels#############################################
+#Channel_1					#AChannelCanHaveSeveralSectionsWichAreSeparetedInTime
+#Chan01_NbrSections=1		#IfThisValueIsNotGiven,ItWillBeDefaultedToOne
+Chan01Sec01_RangeFrom=0		#Default:0
+Chan01Sec01_RangeTo=100000	#Default:TimeWindowThatHasBeenChosenAtRecordingTime
+Chan01Sec01_Threshold=20	#ThresholdForSection1,Default:NoiseThatHasBeenChosenAtRecordTime
+Chan01Sec01_Delay=3			#DelayForCFDForSection1,Default:5
+Chan01Sec01_Fraction=0.5	#FractionForCFDForSection1,Default:0.4
+Chan01Sec01_Walk=10			#WalkForCFDForSection1,Default:0
+
+#Channel_2
+Chan02Sec01_RangeFrom=0
+Chan02Sec01_RangeTo=100000
+Chan02Sec01_Threshold=20
+Chan02Sec01_Delay=3
+Chan02Sec01_Fraction=0.5
+Chan02Sec01_Walk=10
+
+#Channel_3
+Chan03Sec01_RangeFrom=0
+Chan03Sec01_RangeTo=100000
+Chan03Sec01_Threshold=20
+Chan03Sec01_Delay=3
+Chan03Sec01_Fraction=0.5
+Chan03Sec01_Walk=10
+
+#Channel_4
+Chan04Sec01_RangeFrom=0
+Chan04Sec01_RangeTo=100000
+Chan04Sec01_Threshold=20
+Chan04Sec01_Delay=3
+Chan04Sec01_Fraction=0.5
+Chan04Sec01_Walk=10
+
+#Channel_5
+Chan05Sec01_RangeFrom=0
+Chan05Sec01_RangeTo=100000
+Chan05Sec01_Threshold=20
+Chan05Sec01_Delay=3
+Chan05Sec01_Fraction=0.5
+Chan05Sec01_Walk=10
+
+#Channel_6
+Chan06Sec01_RangeFrom=0
+Chan06Sec01_RangeTo=100000
+Chan06Sec01_Threshold=20
+Chan06Sec01_Delay=3
+Chan06Sec01_Fraction=0.5
+Chan06Sec01_Walk=10
+
+#Channel_7
+Chan07Sec01_RangeFrom=0
+Chan07Sec01_RangeTo=100000
+Chan07Sec01_Threshold=20
+Chan07Sec01_Delay=5
+Chan07Sec01_Fraction=0.6
+Chan07Sec01_Walk=0
+
+#Channel_8
+#Chan08_NbrSections=1
+#Chan08Sec01_Threshold=500
+
+
+#########################SetUpDetektors########################
+NbrDetektors=1		#HowManyDetektorsAreUsed
+Detektor_1=RecDet	#WhatsTheDetektorsName
+
+
+#########################RecoilDetektor########################
+RecDet_U1=Chan01Sec01	#WhichChannelAndChannelsectionDoesU1SignalComFrom
+RecDet_U2=Chan02Sec01
+RecDet_V1=Chan03Sec01
+RecDet_V2=Chan04Sec01
+RecDet_W1=Chan05Sec01
+RecDet_W2=Chan06Sec01
+RecDet_Mcp=Chan07Sec01
+
+RecDet_U1_Polarity=1	#Polarity:1=Positve,2=Negative
+RecDet_U2_Polarity=1	#Polarity:1=Positve,2=Negative
+RecDet_V1_Polarity=1	#Polarity:1=Positve,2=Negative
+RecDet_V2_Polarity=1	#Polarity:1=Positve,2=Negative
+RecDet_W1_Polarity=1	#Polarity:1=Positve,2=Negative
+RecDet_W2_Polarity=1	#Polarity:1=Positve,2=Negative
+RecDet_Mcp_Polarity=1	#Polarity:1=Positve,2=Negative
+
+#DefineTimeRangesForLayers(IfYouDon'tDoIt,TimeRangeFromChannelSectionWillBeTaken
+RecDet_U1_NbrOfTimeRanges=1
+RecDet_U1_TimeRange01_From=0
+RecDet_U1_TimeRange01_To=100000
+RecDet_U2_NbrOfTimeRanges=1
+RecDet_U2_TimeRange01_From=0
+RecDet_U2_TimeRange01_To=100000
+
+RecDet_V1_NbrOfTimeRanges=1
+RecDet_V1_TimeRange01_From=0
+RecDet_V1_TimeRange01_To=100000
+RecDet_V2_NbrOfTimeRanges=1
+RecDet_V2_TimeRange01_From=0
+RecDet_V2_TimeRange01_To=100000
+
+RecDet_W1_NbrOfTimeRanges=1
+RecDet_W1_TimeRange01_From=0
+RecDet_W1_TimeRange01_To=100000
+RecDet_W2_NbrOfTimeRanges=1
+RecDet_W2_TimeRange01_From=0
+RecDet_W2_TimeRange01_To=100000
+
+RecDet_Mcp_NbrOfTimeRanges=1
+RecDet_Mcp_TimeRange01_From=0
+RecDet_Mcp_TimeRange01_To=100000
+
+
+#TimeSumStuff
+RecDet_TimesumULow=70
+RecDet_TimesumUHigh=90
+RecDet_TimesumVLow=60
+RecDet_TimesumVHigh=90
+RecDet_TimesumWLow=55
+RecDet_TimesumWHigh=90
+
+
+#StuffForThisDetsSorter
+RecDet_SorterMethod=0	#0:SimpleSorting,1:AchimsRoutine
+RecDet_ActivateSorter=1	#0:Don'tSortWithAchimsRoutine,1:UseAchimsRoutine
+RecDet_DoCalibration=0	#1:Turn_on_Calibration_for_this_Detektor,0:Turn_off
+
+RecDet_Runtime=120
+RecDet_DeadTimeAnode=10
+RecDet_DeadTimeMcp=10
+RecDet_McpRadius=60
+RecDet_CorrectCenterX=0	#InNs
+RecDet_CorrectCenterY=0
+RecDet_IsHexAnode=1		#DetektorHasHexAnode:1=true,0=false
+RecDet_UseMcp=1			#DetektorHasHexAnode:1=true,0=false
+
+
+######ScaleFactorsStuff################
+
+RecDet_ScalefactorU=0.5044
+RecDet_ScalefactorV=0.4518
+RecDet_ScalefactorW=0.4395
+RecDet_WLayerOffset=0.8500
+
+
+
+######TimesumWalkCorrectionStuff################
+
+#U-Layer
+RecDet_UNbrOfCorrPts=49
+RecDet_PosU000=-121.0000	RecDet_CorU000=2.2794
+RecDet_PosU001=-115.9583	RecDet_CorU001=2.2794
+RecDet_PosU002=-110.9167	RecDet_CorU002=2.2794
+RecDet_PosU003=-105.8750	RecDet_CorU003=2.2794
+RecDet_PosU004=-100.8333	RecDet_CorU004=2.2794
+RecDet_PosU005=-95.7917	RecDet_CorU005=1.8266
+RecDet_PosU006=-90.7500	RecDet_CorU006=0.8165
+RecDet_PosU007=-85.7083	RecDet_CorU007=1.3882
+RecDet_PosU008=-80.6667	RecDet_CorU008=1.5553
+RecDet_PosU009=-75.6250	RecDet_CorU009=1.7847
+RecDet_PosU010=-70.5833	RecDet_CorU010=2.0020
+RecDet_PosU011=-65.5417	RecDet_CorU011=2.0127
+RecDet_PosU012=-60.5000	RecDet_CorU012=2.0986
+RecDet_PosU013=-55.4583	RecDet_CorU013=2.0629
+RecDet_PosU014=-50.4167	RecDet_CorU014=2.1238
+RecDet_PosU015=-45.3750	RecDet_CorU015=2.1318
+RecDet_PosU016=-40.3333	RecDet_CorU016=1.9701
+RecDet_PosU017=-35.2917	RecDet_CorU017=1.9366
+RecDet_PosU018=-30.2500	RecDet_CorU018=1.8385
+RecDet_PosU019=-25.2083	RecDet_CorU019=1.6184
+RecDet_PosU020=-20.1667	RecDet_CorU020=1.5654
+RecDet_PosU021=-15.1250	RecDet_CorU021=1.3981
+RecDet_PosU022=-10.0833	RecDet_CorU022=1.2787
+RecDet_PosU023=-5.0417	RecDet_CorU023=1.1615
+RecDet_PosU024=0.0000	RecDet_CorU024=1.1155
+RecDet_PosU025=5.0417	RecDet_CorU025=0.9553
+RecDet_PosU026=10.0833	RecDet_CorU026=0.8139
+RecDet_PosU027=15.1250	RecDet_CorU027=0.7199
+RecDet_PosU028=20.1667	RecDet_CorU028=0.5881
+RecDet_PosU029=25.2083	RecDet_CorU029=0.5570
+RecDet_PosU030=30.2500	RecDet_CorU030=0.4848
+RecDet_PosU031=35.2917	RecDet_CorU031=0.4528
+RecDet_PosU032=40.3333	RecDet_CorU032=0.4387
+RecDet_PosU033=45.3750	RecDet_CorU033=0.3637
+RecDet_PosU034=50.4167	RecDet_CorU034=0.3235
+RecDet_PosU035=55.4583	RecDet_CorU035=0.2932
+RecDet_PosU036=60.5000	RecDet_CorU036=0.2698
+RecDet_PosU037=65.5417	RecDet_CorU037=0.2693
+RecDet_PosU038=70.5833	RecDet_CorU038=0.3272
+RecDet_PosU039=75.6250	RecDet_CorU039=0.3194
+RecDet_PosU040=80.6667	RecDet_CorU040=0.3833
+RecDet_PosU041=85.7083	RecDet_CorU041=0.2922
+RecDet_PosU042=90.7500	RecDet_CorU042=0.3867
+RecDet_PosU043=95.7917	RecDet_CorU043=0.4893
+RecDet_PosU044=100.8333	RecDet_CorU044=2.0938
+RecDet_PosU045=105.8750	RecDet_CorU045=2.0938
+RecDet_PosU046=110.9167	RecDet_CorU046=2.0938
+RecDet_PosU047=115.9583	RecDet_CorU047=2.0938
+RecDet_PosU048=121.0000	RecDet_CorU048=2.0938
+
+#V-Layer
+RecDet_VNbrOfCorrPts=49
+RecDet_PosV000=-121.0000	RecDet_CorV000=2.3035
+RecDet_PosV001=-115.9583	RecDet_CorV001=2.3035
+RecDet_PosV002=-110.9167	RecDet_CorV002=2.3035
+RecDet_PosV003=-105.8750	RecDet_CorV003=2.0504
+RecDet_PosV004=-100.8333	RecDet_CorV004=1.9002
+RecDet_PosV005=-95.7917	RecDet_CorV005=1.7912
+RecDet_PosV006=-90.7500	RecDet_CorV006=1.7035
+RecDet_PosV007=-85.7083	RecDet_CorV007=1.5972
+RecDet_PosV008=-80.6667	RecDet_CorV008=1.4218
+RecDet_PosV009=-75.6250	RecDet_CorV009=1.3238
+RecDet_PosV010=-70.5833	RecDet_CorV010=1.1912
+RecDet_PosV011=-65.5417	RecDet_CorV011=1.0813
+RecDet_PosV012=-60.5000	RecDet_CorV012=0.9702
+RecDet_PosV013=-55.4583	RecDet_CorV013=0.8986
+RecDet_PosV014=-50.4167	RecDet_CorV014=0.7818
+RecDet_PosV015=-45.3750	RecDet_CorV015=0.7902
+RecDet_PosV016=-40.3333	RecDet_CorV016=0.7859
+RecDet_PosV017=-35.2917	RecDet_CorV017=0.8466
+RecDet_PosV018=-30.2500	RecDet_CorV018=1.0771
+RecDet_PosV019=-25.2083	RecDet_CorV019=1.1060
+RecDet_PosV020=-20.1667	RecDet_CorV020=1.3369
+RecDet_PosV021=-15.1250	RecDet_CorV021=1.3929
+RecDet_PosV022=-10.0833	RecDet_CorV022=1.5696
+RecDet_PosV023=-5.0417	RecDet_CorV023=1.5791
+RecDet_PosV024=0.0000	RecDet_CorV024=1.7498
+RecDet_PosV025=5.0417	RecDet_CorV025=1.7906
+RecDet_PosV026=10.0833	RecDet_CorV026=1.8823
+RecDet_PosV027=15.1250	RecDet_CorV027=1.9105
+RecDet_PosV028=20.1667	RecDet_CorV028=1.9522
+RecDet_PosV029=25.2083	RecDet_CorV029=1.9281
+RecDet_PosV030=30.2500	RecDet_CorV030=1.9670
+RecDet_PosV031=35.2917	RecDet_CorV031=1.9956
+RecDet_PosV032=40.3333	RecDet_CorV032=1.9093
+RecDet_PosV033=45.3750	RecDet_CorV033=1.9552
+RecDet_PosV034=50.4167	RecDet_CorV034=1.9048
+RecDet_PosV035=55.4583	RecDet_CorV035=1.9245
+RecDet_PosV036=60.5000	RecDet_CorV036=1.8481
+RecDet_PosV037=65.5417	RecDet_CorV037=1.8047
+RecDet_PosV038=70.5833	RecDet_CorV038=1.6563
+RecDet_PosV039=75.6250	RecDet_CorV039=1.6643
+RecDet_PosV040=80.6667	RecDet_CorV040=1.4707
+RecDet_PosV041=85.7083	RecDet_CorV041=1.3983
+RecDet_PosV042=90.7500	RecDet_CorV042=1.3467
+RecDet_PosV043=95.7917	RecDet_CorV043=1.2497
+RecDet_PosV044=100.8333	RecDet_CorV044=1.0313
+RecDet_PosV045=105.8750	RecDet_CorV045=0.9105
+RecDet_PosV046=110.9167	RecDet_CorV046=1.9617
+RecDet_PosV047=115.9583	RecDet_CorV047=1.9617
+RecDet_PosV048=121.0000	RecDet_CorV048=1.9617
+
+#W-Layer
+RecDet_WNbrOfCorrPts=49
+RecDet_PosW000=-121.0000	RecDet_CorW000=0.3553
+RecDet_PosW001=-115.9583	RecDet_CorW001=0.3553
+RecDet_PosW002=-110.9167	RecDet_CorW002=0.3553
+RecDet_PosW003=-105.8750	RecDet_CorW003=0.4088
+RecDet_PosW004=-100.8333	RecDet_CorW004=0.5120
+RecDet_PosW005=-95.7917	RecDet_CorW005=0.4796
+RecDet_PosW006=-90.7500	RecDet_CorW006=0.4519
+RecDet_PosW007=-85.7083	RecDet_CorW007=0.4403
+RecDet_PosW008=-80.6667	RecDet_CorW008=0.3623
+RecDet_PosW009=-75.6250	RecDet_CorW009=0.3713
+RecDet_PosW010=-70.5833	RecDet_CorW010=0.3648
+RecDet_PosW011=-65.5417	RecDet_CorW011=0.3326
+RecDet_PosW012=-60.5000	RecDet_CorW012=0.3213
+RecDet_PosW013=-55.4583	RecDet_CorW013=0.3406
+RecDet_PosW014=-50.4167	RecDet_CorW014=0.3502
+RecDet_PosW015=-45.3750	RecDet_CorW015=0.3664
+RecDet_PosW016=-40.3333	RecDet_CorW016=0.3530
+RecDet_PosW017=-35.2917	RecDet_CorW017=0.4481
+RecDet_PosW018=-30.2500	RecDet_CorW018=0.4954
+RecDet_PosW019=-25.2083	RecDet_CorW019=0.6349
+RecDet_PosW020=-20.1667	RecDet_CorW020=0.6113
+RecDet_PosW021=-15.1250	RecDet_CorW021=0.7240
+RecDet_PosW022=-10.0833	RecDet_CorW022=0.8115
+RecDet_PosW023=-5.0417	RecDet_CorW023=0.9786
+RecDet_PosW024=0.0000	RecDet_CorW024=1.0851
+RecDet_PosW025=5.0417	RecDet_CorW025=1.1675
+RecDet_PosW026=10.0833	RecDet_CorW026=1.3485
+RecDet_PosW027=15.1250	RecDet_CorW027=1.5083
+RecDet_PosW028=20.1667	RecDet_CorW028=1.6565
+RecDet_PosW029=25.2083	RecDet_CorW029=1.8254
+RecDet_PosW030=30.2500	RecDet_CorW030=1.9586
+RecDet_PosW031=35.2917	RecDet_CorW031=2.1141
+RecDet_PosW032=40.3333	RecDet_CorW032=2.1913
+RecDet_PosW033=45.3750	RecDet_CorW033=2.3141
+RecDet_PosW034=50.4167	RecDet_CorW034=2.4826
+RecDet_PosW035=55.4583	RecDet_CorW035=2.5383
+RecDet_PosW036=60.5000	RecDet_CorW036=2.5912
+RecDet_PosW037=65.5417	RecDet_CorW037=2.6469
+RecDet_PosW038=70.5833	RecDet_CorW038=2.6109
+RecDet_PosW039=75.6250	RecDet_CorW039=2.6947
+RecDet_PosW040=80.6667	RecDet_CorW040=2.6342
+RecDet_PosW041=85.7083	RecDet_CorW041=2.7131
+RecDet_PosW042=90.7500	RecDet_CorW042=2.5833
+RecDet_PosW043=95.7917	RecDet_CorW043=2.5149
+RecDet_PosW044=100.8333	RecDet_CorW044=2.3134
+RecDet_PosW045=105.8750	RecDet_CorW045=1.8377
+RecDet_PosW046=110.9167	RecDet_CorW046=1.8666
+RecDet_PosW047=115.9583	RecDet_CorW047=2.2743
+RecDet_PosW048=121.0000	RecDet_CorW048=2.2743
+
+#########################FilesToWorkOn########################
+{lma_filelist}
+
+q
