@@ -19,58 +19,58 @@ IntervalOfTerminalCounterUpdate=10
 #Chan01_NbrSections=1		#IfThisValueIsNotGiven,ItWillBeDefaultedToOne
 Chan01Sec01_RangeFrom=0		#Default:0
 Chan01Sec01_RangeTo=100000	#Default:TimeWindowThatHasBeenChosenAtRecordingTime
-Chan01Sec01_Threshold=20	#ThresholdForSection1,Default:NoiseThatHasBeenChosenAtRecordTime
-Chan01Sec01_Delay=3			#DelayForCFDForSection1,Default:5
-Chan01Sec01_Fraction=0.5	#FractionForCFDForSection1,Default:0.4
-Chan01Sec01_Walk=10			#WalkForCFDForSection1,Default:0
+Chan01Sec01_Threshold=60	#ThresholdForSection1,Default:NoiseThatHasBeenChosenAtRecordTime
+Chan01Sec01_Delay=4			#DelayForCFDForSection1,Default:5
+Chan01Sec01_Fraction=0.7	#FractionForCFDForSection1,Default:0.4
+Chan01Sec01_Walk=7			#WalkForCFDForSection1,Default:0
 
 #Channel_2
 Chan02Sec01_RangeFrom=0
 Chan02Sec01_RangeTo=100000
-Chan02Sec01_Threshold=20
+Chan02Sec01_Threshold=60
 Chan02Sec01_Delay=3
-Chan02Sec01_Fraction=0.5
-Chan02Sec01_Walk=10
+Chan02Sec01_Fraction=0.62
+Chan02Sec01_Walk=4
 
 #Channel_3
 Chan03Sec01_RangeFrom=0
 Chan03Sec01_RangeTo=100000
-Chan03Sec01_Threshold=20
+Chan03Sec01_Threshold=60
 Chan03Sec01_Delay=3
-Chan03Sec01_Fraction=0.5
-Chan03Sec01_Walk=10
+Chan03Sec01_Fraction=0.71
+Chan03Sec01_Walk=3
 
 #Channel_4
 Chan04Sec01_RangeFrom=0
 Chan04Sec01_RangeTo=100000
-Chan04Sec01_Threshold=20
-Chan04Sec01_Delay=3
-Chan04Sec01_Fraction=0.5
-Chan04Sec01_Walk=10
+Chan04Sec01_Threshold=60
+Chan04Sec01_Delay=2
+Chan04Sec01_Fraction=0.74
+Chan04Sec01_Walk=6
 
 #Channel_5
 Chan05Sec01_RangeFrom=0
 Chan05Sec01_RangeTo=100000
-Chan05Sec01_Threshold=20
-Chan05Sec01_Delay=3
-Chan05Sec01_Fraction=0.5
-Chan05Sec01_Walk=10
+Chan05Sec01_Threshold=60
+Chan05Sec01_Delay=2
+Chan05Sec01_Fraction=0.78
+Chan05Sec01_Walk=1
 
 #Channel_6
 Chan06Sec01_RangeFrom=0
 Chan06Sec01_RangeTo=100000
-Chan06Sec01_Threshold=20
+Chan06Sec01_Threshold=60
 Chan06Sec01_Delay=3
-Chan06Sec01_Fraction=0.5
-Chan06Sec01_Walk=10
+Chan06Sec01_Fraction=0.72
+Chan06Sec01_Walk=3
 
 #Channel_7
 Chan07Sec01_RangeFrom=0
 Chan07Sec01_RangeTo=100000
-Chan07Sec01_Threshold=20
-Chan07Sec01_Delay=5
+Chan07Sec01_Threshold=30
+Chan07Sec01_Delay=3
 Chan07Sec01_Fraction=0.6
-Chan07Sec01_Walk=0
+Chan07Sec01_Walk=4
 
 #Channel_8
 #Chan08_NbrSections=1
