@@ -139,7 +139,7 @@ RecDet_DoCalibration=0	#1:Turn_on_Calibration_for_this_Detektor,0:Turn_off
 
 RecDet_Runtime=120
 RecDet_DeadTimeAnode=10
-RecDet_DeadTimeMcp=10
+RecDet_DeadTimeMcp=30
 RecDet_McpRadius=60
 RecDet_CorrectCenterX=0	#InNs
 RecDet_CorrectCenterY=0
