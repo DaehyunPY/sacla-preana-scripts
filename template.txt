@@ -27,7 +27,7 @@ Chan01Sec01_Walk=7			#WalkForCFDForSection1,Default:0
 #Channel_2
 Chan02Sec01_RangeFrom=0
 Chan02Sec01_RangeTo=100000
-Chan02Sec01_Threshold=60
+Chan02Sec01_Threshold=100
 Chan02Sec01_Delay=3
 Chan02Sec01_Fraction=0.62
 Chan02Sec01_Walk=4
@@ -35,7 +35,7 @@ Chan02Sec01_Walk=4
 #Channel_3
 Chan03Sec01_RangeFrom=0
 Chan03Sec01_RangeTo=100000
-Chan03Sec01_Threshold=60
+Chan03Sec01_Threshold=100
 Chan03Sec01_Delay=3
 Chan03Sec01_Fraction=0.71
 Chan03Sec01_Walk=3
@@ -43,7 +43,7 @@ Chan03Sec01_Walk=3
 #Channel_4
 Chan04Sec01_RangeFrom=0
 Chan04Sec01_RangeTo=100000
-Chan04Sec01_Threshold=60
+Chan04Sec01_Threshold=100
 Chan04Sec01_Delay=2
 Chan04Sec01_Fraction=0.74
 Chan04Sec01_Walk=6
@@ -51,7 +51,7 @@ Chan04Sec01_Walk=6
 #Channel_5
 Chan05Sec01_RangeFrom=0
 Chan05Sec01_RangeTo=100000
-Chan05Sec01_Threshold=60
+Chan05Sec01_Threshold=100
 Chan05Sec01_Delay=2
 Chan05Sec01_Fraction=0.78
 Chan05Sec01_Walk=1
@@ -59,7 +59,7 @@ Chan05Sec01_Walk=1
 #Channel_6
 Chan06Sec01_RangeFrom=0
 Chan06Sec01_RangeTo=100000
-Chan06Sec01_Threshold=60
+Chan06Sec01_Threshold=100
 Chan06Sec01_Delay=3
 Chan06Sec01_Fraction=0.72
 Chan06Sec01_Walk=3
@@ -67,7 +67,7 @@ Chan06Sec01_Walk=3
 #Channel_7
 Chan07Sec01_RangeFrom=0
 Chan07Sec01_RangeTo=100000
-Chan07Sec01_Threshold=30
+Chan07Sec01_Threshold=150
 Chan07Sec01_Delay=3
 Chan07Sec01_Fraction=0.6
 Chan07Sec01_Walk=4
@@ -75,7 +75,6 @@ Chan07Sec01_Walk=4
 #Channel_8
 #Chan08_NbrSections=1
 #Chan08Sec01_Threshold=500
-
 
 #########################SetUpDetektors########################
 NbrDetektors=1		#HowManyDetektorsAreUsed
@@ -125,7 +124,6 @@ RecDet_Mcp_NbrOfTimeRanges=1
 RecDet_Mcp_TimeRange01_From=0
 RecDet_Mcp_TimeRange01_To=100000
 
-
 #TimeSumStuff
 RecDet_TimesumULow=96
 RecDet_TimesumUHigh=105
@@ -134,9 +132,8 @@ RecDet_TimesumVHigh=115
 RecDet_TimesumWLow=111
 RecDet_TimesumWHigh=118
 
-
 #StuffForThisDetsSorter
-RecDet_SorterMethod=0	#0:SimpleSorting (2L),1:AchimsRoutine (3L)
+RecDet_SorterMethod=1	#0:SimpleSorting,1:AchimsRoutine
 RecDet_ActivateSorter=1	#0:Don'tSortWithAchimsRoutine,1:UseAchimsRoutine
 RecDet_DoCalibration=0	#1:Turn_on_Calibration_for_this_Detektor,0:Turn_off
 
@@ -149,15 +146,12 @@ RecDet_CorrectCenterY=0
 RecDet_IsHexAnode=1		#DetektorHasHexAnode:1=true,0=false
 RecDet_UseMcp=1			#DetektorHasHexAnode:1=true,0=false
 
-
 ######ScaleFactorsStuff################
 
 RecDet_ScalefactorU=0.5550
 RecDet_ScalefactorV=0.4968
 RecDet_ScalefactorW=0.4843
 RecDet_WLayerOffset=-0.1250
-
-
 
 ######TimesumWalkCorrectionStuff################
 
