@@ -67,7 +67,7 @@ Chan06Sec01_Walk=3
 #Channel_7
 Chan07Sec01_RangeFrom=0
 Chan07Sec01_RangeTo=100000
-Chan07Sec01_Threshold=150
+Chan07Sec01_Threshold=100
 Chan07Sec01_Delay=3
 Chan07Sec01_Fraction=0.6
 Chan07Sec01_Walk=4
@@ -139,7 +139,7 @@ RecDet_DoCalibration=0	#1:Turn_on_Calibration_for_this_Detektor,0:Turn_off
 
 RecDet_Runtime=120
 RecDet_DeadTimeAnode=10
-RecDet_DeadTimeMcp=30
+RecDet_DeadTimeMcp=10
 RecDet_McpRadius=60
 RecDet_CorrectCenterX=0	#InNs
 RecDet_CorrectCenterY=0
