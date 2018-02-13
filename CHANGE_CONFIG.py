@@ -13,10 +13,10 @@ config_asstr = dedent(
     """\
     exe_path: C:\\home\\programs\\lma2root_SACLA\\Binaries\\lma2root.exe
     txt_template_file: C:\\Users\\uedalab\\Desktop\\RESORT_SCRIPT\\template.txt
-    lma_files: Z:\\2017B8065\\lma_files\\{aq}__*.lma
-    output_dir: D:\\2017B8065\\hit_files\\{aq}
+    lma_files: Z:\\2017B8050\\lma_files\\{aq}__*.lma
+    output_dir: D:\\2017B8050\\hit_files\\{aq}
     output_basename: {aq}
-    """.format(aq="test"))
+    """.format(aq="Aq002"))
 config = load_config(config_asstr)
 
 # %% read txt template

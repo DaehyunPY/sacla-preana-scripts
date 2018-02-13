@@ -1,3 +1,4 @@
 open sftp://uedalab:xuedalabx@xhpcfep02/
 synchronize remote D:\2017B8065\ /work/uedalab/2017B8065/ -filemask="*.hit"
+synchronize remote D:\2017B8050\ /work/uedalab/2017B8050/ -filemask="*.hit"
 exit

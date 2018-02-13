@@ -1,3 +1,4 @@
 open sftp://uedalab:xuedalabx@xhpcfep02/
 synchronize remote Z:\2017B8065\ /work/uedalab/2017B8065/ -filemask="*.lma"
+synchronize remote Z:\2017B8050\ /work/uedalab/2017B8050/ -filemask="*.lma"
 exit
