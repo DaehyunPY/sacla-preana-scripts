@@ -133,7 +133,7 @@ RecDet_TimesumWLow=111
 RecDet_TimesumWHigh=118
 
 #StuffForThisDetsSorter
-RecDet_SorterMethod=1	#0:SimpleSorting,1:AchimsRoutine
+RecDet_SorterMethod=0	#0:SimpleSorting,1:AchimsRoutine
 RecDet_ActivateSorter=1	#0:Don'tSortWithAchimsRoutine,1:UseAchimsRoutine
 RecDet_DoCalibration=0	#1:Turn_on_Calibration_for_this_Detektor,0:Turn_off
 

@@ -16,7 +16,7 @@ config_asstr = dedent(
     lma_files: Z:\\2017B8050\\lma_files\\{aq}__*.lma
     output_dir: D:\\2017B8050\\hit_files\\{aq}
     output_basename: {aq}
-    """.format(aq="Aq002"))
+    """.format(aq="Aq093"))
 config = load_config(config_asstr)
 
 # %% read txt template
