@@ -341,6 +341,6 @@ RecDet_PosW048=121.0000    RecDet_CorW048=5.3007
 ###
 #FilesToWorkOn
 ###
-{lma_filelist}
+{lmafilelist}
 
 q
