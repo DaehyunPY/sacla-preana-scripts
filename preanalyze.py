@@ -1,3 +1,6 @@
+"""
+Preanalyze lma files and save (t,x,y) data in root/hit format.
+"""
 # %% import external dependencies
 from typing import List, Iterable
 from os import makedirs
@@ -11,7 +14,7 @@ __all__ = ['call_preanalyzer']
 
 
 # %% parameters
-templatepath = 'C:\\Users\\uedalab\\Desktop\\preanalysis_daehyun\\template.txt'
+templatepath = 'template.txt'
 lma2rootpath = 'C:\\home\\programs\\lma2root_SACLA\\Binaries\\lma2root.exe'
 
 

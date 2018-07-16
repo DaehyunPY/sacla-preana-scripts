@@ -1,4 +1,6 @@
-#!/usr/bin/env python
+"""
+Preanalyzing daemon.
+"""
 # %% import external dependencies
 from glob import glob
 from os import remove
@@ -18,25 +20,43 @@ startinterval = 30
 
 
 def workingdir(key: str) -> str:
+    """
+    Working dir where a preanalyzing process works.
+    """
     return f'C:\\Users\\uedalab\\Desktop\\preanalysis_daehyun\\test\\hit_files\\{key}'
 
 
 def keypatt(lmafilename: str) -> str:
+    """
+    A rule (pattern) getting keys from lma filenames, where key is unique str indentifying lma file groups.
+    In other words, files having the same key belong to the same group. For example, if we define the function as...
+
+    keypatt(lmafilename: str) -> str:
+        from os.path import basename
+        key, _ = basename(lmafilename).rsplit('__', maxsplit=1)
+        return key
+    
+    then, these two files 'aq001__0000.lma' and 'aq001__0001.lma' have the same key 'aq001'; they will be preanalyzed
+    as the same lma group.
+    """
     key, _ = basename(lmafilename).rsplit('__', maxsplit=1)
     return key
 
 
+def targetlist() -> List[str]:
+    """
+    Target lma file list.
+    """
+    return glob(f'C:\\Users\\uedalab\\Desktop\\preanalysis_daehyun\\test\\lma_files\\*.lma')
+
+
 def currentkeys() -> Mapping[str, float]:
-    patt = 'C:\\Users\\uedalab\\Desktop\\preanalysis_daehyun\\test\\lma_files\\*.lma'
-    globbed = glob(patt)
+    """
+    Current keys (lma file groups) have to be preanalyzed and their last modifed timestamp.
+    Do not return keys which already have been analyzed.
+    """
     return  {k: max(getmtime(f) for f in groupped)
-             for k, groupped in groupby(globbed, keypatt) if not exists(workingdir(k))}
-
-
-def targetlist(key: str) -> List[str]:
-    patt = f'C:\\Users\\uedalab\\Desktop\\preanalysis_daehyun\\test\\lma_files\\{key}__*.lma'
-    globbed = glob(patt)
-    return sorted(globbed)
+             for k, groupped in groupby(targetlist(), keypatt) if not exists(workingdir(k))}
 
 
 # %%
@@ -66,7 +86,8 @@ def work(key: str) -> None:
     locker = f'{wdir}.locked'
     print(f"[{datetime.now()}] Working on key '{key}'...")
     with open(locker, 'w'):
-        call_preanalyzer(lmafilelist=targetlist(key), workingdir=wdir)
+        call_preanalyzer(lmafilelist=[f for f in targetlist() if keypatt(f)==key],
+                         workingdir=wdir)
     remove(locker)
 
 
