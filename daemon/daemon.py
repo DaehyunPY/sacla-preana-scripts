@@ -4,21 +4,21 @@ Preanalyzing daemon.
 # %% import external dependencies
 from glob import glob
 from os import remove
-from os.path import dirname, join, basename, splitext, exists, relpath, getmtime
+from os.path import basename, exists, getmtime
 from typing import List, Set, Mapping
 from time import sleep
 from datetime import datetime, timedelta
 from threading import Thread, active_count
 from itertools import groupby
 
-from .preanalyze import call_preanalyzer
+from .aprocess import call_aprocess
 
 
 __all__ = ['run']
 
 
 # %% parameters
-maxworkers = 4
+maxworkers = 3
 startinterval = 30
 parents = 'C:\\Users\\uedalab\\Desktop\\test'
 
@@ -90,8 +90,8 @@ def work(key: str) -> None:
     locker = f'{wdir}.locked'
     print(f"[{datetime.now()}] Working on key '{key}'...")
     with open(locker, 'w'):
-        call_preanalyzer(lmafilelist=[f for f in targetlist() if keypatt(f)==key],
-                         workingdir=wdir)
+        call_aprocess(lmafilelist=[f for f in targetlist() if keypatt(f) == key],
+                      workingdir=wdir)
     remove(locker)
 
 
