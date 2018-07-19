@@ -1,1 +1,2 @@
-python daemon.py
+python -m daemon
+pause

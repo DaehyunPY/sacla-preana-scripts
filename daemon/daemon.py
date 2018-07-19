@@ -11,19 +11,23 @@ from datetime import datetime, timedelta
 from threading import Thread, active_count
 from itertools import groupby
 
-from preanalyze import call_preanalyzer
+from .preanalyze import call_preanalyzer
+
+
+__all__ = ['run']
 
 
 # %% parameters
 maxworkers = 4
 startinterval = 30
+parents = 'C:\\Users\\uedalab\\Desktop\\test'
 
 
 def workingdir(key: str) -> str:
     """
     Working dir where a preanalyzing process works.
     """
-    return f'C:\\Users\\uedalab\\Desktop\\preanalysis_daehyun\\test\\hit_files\\{key}'
+    return f'{parents}\\hit_files\\{key}'
 
 
 def keypatt(lmafilename: str) -> str:
@@ -47,7 +51,7 @@ def targetlist() -> List[str]:
     """
     Target lma file list.
     """
-    return glob(f'C:\\Users\\uedalab\\Desktop\\preanalysis_daehyun\\test\\lma_files\\*.lma')
+    return glob(f'{parents}\\lma_files\\*.lma')
 
 
 def currentkeys() -> Mapping[str, float]:
@@ -92,8 +96,9 @@ def work(key: str) -> None:
 
 
 # %% inf loop
-for jobs in todolist():
-    for key in jobs:
-        if not islocked(key) and active_count()-1 < maxworkers:
-            job = Thread(target=work, args=[key])
-            job.start()
+def run() -> None:
+    for jobs in todolist():
+        for key in jobs:
+            if not islocked(key) and active_count()-1 < maxworkers:
+                job = Thread(target=work, args=[key])
+                job.start()
