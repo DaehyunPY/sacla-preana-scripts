@@ -9,18 +9,20 @@ from textwrap import dedent
 from subprocess import call
 from warnings import warn
 
+from importlib_resources import read_text
+
+from . import rsc
+
 
 __all__ = ['call_preanalyzer']
 
 
 # %% parameters
-templatepath = 'template.txt'
 lma2rootpath = 'C:\\home\\programs\\lma2root_SACLA\\Binaries\\lma2root.exe'
 
 
 # %%
-with open(templatepath, 'r') as f:
-    template = f.read()
+template = read_text(rsc, 'template.txt')
 
 
 def call_preanalyzer(lmafilelist: Iterable[str], workingdir: str) -> None:

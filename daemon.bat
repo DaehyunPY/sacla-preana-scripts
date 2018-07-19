@@ -1,2 +1,2 @@
-python -m daemon
+pipenv run python -m daemon
 pause
