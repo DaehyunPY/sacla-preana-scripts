@@ -19,15 +19,14 @@ __all__ = ['run']
 
 # %% parameters
 maxworkers = 3
-startinterval = 30
-parents = 'C:\\Users\\uedalab\\Desktop\\test'
+startinterval = 10
 
 
 def workingdir(key: str) -> str:
     """
     Working dir where a preanalyzing process works.
     """
-    return f'{parents}\\hit_files\\{key}'
+    return f'D:\\2018A8038Ueda\\hit_files\\{key}'
 
 
 def keypatt(lmafilename: str) -> str:
@@ -51,7 +50,7 @@ def targetlist() -> List[str]:
     """
     Target lma file list.
     """
-    return glob(f'{parents}\\lma_files\\*.lma')
+    return glob('Z:\\2018A8038Ueda\\lma_files\\aq*.lma')
 
 
 def currentkeys() -> Mapping[str, float]:

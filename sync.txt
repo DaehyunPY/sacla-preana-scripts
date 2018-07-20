@@ -1,7 +1,6 @@
 option batch continue
 option confirm off
 
-open sftp://uedalab:xuedalabx@xhpcfep02/
-synchronize remote -permissions=0644 -filemask="*.hit" D:\2017B8065\ /work/uedalab/2017B8065/
-synchronize remote -permissions=0644 -filemask="*.hit" D:\2017B8050\ /work/uedalab/2017B8050/
+open sftp://uedalab:lies-woof-member@xhpcfep02/
+synchronize remote -permissions=0644 -filemask="SortEvent_*.root" D:\2018A8038Ueda\ /work/uedalab/2018A8038Ueda/
 exit
