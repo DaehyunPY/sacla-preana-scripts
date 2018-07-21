@@ -26,7 +26,7 @@ def workingdir(key: str) -> str:
     """
     Working dir where a preanalyzing process works.
     """
-    return f'D:\\2018A8038Ueda\\hit_files\\{key}'
+    return f'D:\\2018A8038Ueda\\hit_files\\{key}_first3files'
 
 
 def keypatt(lmafilename: str) -> str:
@@ -50,7 +50,7 @@ def targetlist() -> List[str]:
     """
     Target lma file list.
     """
-    return glob('Z:\\2018A8038Ueda\\lma_files\\aq*.lma')
+    return glob('Z:\\2018A8038Ueda\\lma_files\\aq*__000[012].lma')
 
 
 def currentkeys() -> Mapping[str, float]:
