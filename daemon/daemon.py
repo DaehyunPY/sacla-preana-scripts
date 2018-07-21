@@ -4,7 +4,7 @@ Preanalyzing daemon.
 # %% import external dependencies
 from glob import glob
 from os import remove
-from os.path import basename, exists, getmtime, getctime
+from os.path import basename, exists, getmtime
 from typing import List, Set, Mapping
 from time import sleep
 from datetime import datetime
@@ -18,7 +18,7 @@ __all__ = ['run']
 
 
 # %% parameters
-maxworkers = 3
+maxworkers = 3*3
 startinterval = 60*3
 
 
@@ -61,7 +61,7 @@ def currentkeys() -> Mapping[str, float]:
     mtimes = {k: max(getmtime(f) for f in groupped)
               for k, groupped in groupby(targetlist(), keypatt)}
     return {k: m for k, m in mtimes.items()
-            if not exists(workingdir(k)) or getctime(workingdir(k)) < m}
+            if not exists(workingdir(k)) or getmtime(workingdir(k)) < m}
 
 
 # %%
