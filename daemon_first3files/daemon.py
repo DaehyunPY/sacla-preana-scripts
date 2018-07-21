@@ -74,7 +74,8 @@ def todolist() -> Set[str]:
         print(f"[{datetime.now()}] Scanning new lma files...")
         curr = currentkeys()
         lastchecked = datetime.now()
-        yield sorted(k for k in curr if k in lastkeys and curr[k] <= lastkeys[k])
+        # do not read very last run and flip the order
+        yield sorted(k for k in curr if k in lastkeys and curr[k] <= lastkeys[k])[:-1][::-1]
         lastkeys = curr
 
 
