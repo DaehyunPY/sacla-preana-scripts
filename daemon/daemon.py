@@ -4,10 +4,10 @@ Preanalyzing daemon.
 # %% import external dependencies
 from glob import glob
 from os import remove
-from os.path import basename, exists, getmtime
+from os.path import basename, exists, getmtime, getctime
 from typing import List, Set, Mapping
 from time import sleep
-from datetime import datetime, timedelta
+from datetime import datetime
 from threading import Thread, active_count
 from itertools import groupby
 
@@ -19,7 +19,7 @@ __all__ = ['run']
 
 # %% parameters
 maxworkers = 3
-startinterval = 120
+startinterval = 60*3
 
 
 def workingdir(key: str) -> str:
@@ -58,25 +58,24 @@ def currentkeys() -> Mapping[str, float]:
     Current keys (lma file groups) have to be preanalyzed and their last modifed timestamp.
     Do not return keys which already have been analyzed.
     """
-    return  {k: max(getmtime(f) for f in groupped)
-             for k, groupped in groupby(targetlist(), keypatt) if not exists(workingdir(k))}
+    mtimes = {k: max(getmtime(f) for f in groupped)
+              for k, groupped in groupby(targetlist(), keypatt)}
+    return {k: m for k, m in mtimes.items()
+            if not exists(workingdir(k)) or getctime(workingdir(k)) < m}
 
 
 # %%
 def todolist() -> Set[str]:
     print(f"[{datetime.now()}] Scanning lma files...")
     lastkeys = currentkeys()
-    lastchecked = datetime.now()
+    sleep(startinterval)
     while True:
-        if datetime.now() < lastchecked + timedelta(seconds=startinterval):
-            sleep(startinterval)
-            continue
         print(f"[{datetime.now()}] Scanning new lma files...")
         curr = currentkeys()
-        lastchecked = datetime.now()
         # do not read very last run and flip the order
-        yield sorted(k for k in curr if k in lastkeys and curr[k] <= lastkeys[k])[:-1][::-1]
+        yield sorted(k for k in curr if k in lastkeys and curr[k] <= lastkeys[k])
         lastkeys = curr
+        sleep(startinterval)
 
 
 def islocked(key: str) -> bool:
