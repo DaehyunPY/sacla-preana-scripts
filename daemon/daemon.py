@@ -97,6 +97,7 @@ def work(key: str) -> None:
 # %% inf loop
 def run() -> None:
     for jobs in todolist():
+        print(f"[{datetime.now()}] Todo list: {' '.join(jobs)}")
         for key in jobs:
             if not islocked(key) and active_count()-1 < maxworkers:
                 job = Thread(target=work, args=[key])
