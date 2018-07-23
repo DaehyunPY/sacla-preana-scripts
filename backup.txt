@@ -1,0 +1,7 @@
+option batch continue
+option confirm off
+
+open sftp://uedalab:lies-woof-member@xhpcfep02/
+synchronize remote -permissions=0644         D:\ /UserData/uedalab/work.uedalab/
+synchronize remote -permissions=0644 -delete C:\ /UserData/uedalab/root.preana.lastest/
+exit

@@ -1,0 +1,9 @@
+127.0.0.1       localhost
+127.0.1.1       uedalab-user2
+10.12.101.51    xhpcfep01 xhpcfep fep
+10.12.101.52    xhpcfep02 xhpcfep fep
+172.28.8.31     xqaccdaq01
+172.30.120.196  xu-bl3-anapc01 anapc
+172.30.120.197  xu-bl3-anapc02 anapc
+10.12.100.92    xhpcsmp-bl3 smp
+10.12.101.81    xhpcelog.hpc.spring8.or.jp xhpcelog elog
