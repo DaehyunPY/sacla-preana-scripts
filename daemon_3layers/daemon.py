@@ -18,7 +18,7 @@ __all__ = ['run']
 
 
 # %% parameters
-maxworkers = 3*3
+maxworkers = 3
 startinterval = 30
 
 
@@ -26,7 +26,7 @@ def workingdir(key: str) -> str:
     """
     Working dir where a preanalyzing process works.
     """
-    return f'D:\\2018A8038Ueda\\hit_files\\{key}'
+    return f'D:\\2018A8038Ueda\\hit_files\\{key}_3layers'
 
 
 def keypatt(lmafilename: str) -> str:
@@ -73,7 +73,8 @@ def todolist() -> Set[str]:
         print(f"[{datetime.now()}] Scanning new lma files...")
         curr = currentkeys()
         # do not read very last run and flip the order
-        yield sorted(k for k in curr if k in lastkeys and curr[k] <= lastkeys[k])
+        # yield sorted(k for k in curr if k in lastkeys and curr[k] <= lastkeys[k])
+        yield sorted(curr)
         lastkeys = curr
         sleep(startinterval)
 
@@ -98,7 +99,7 @@ def work(key: str) -> None:
 def run() -> None:
     for jobs in todolist():
         print(f"[{datetime.now()}] Todo list: {' '.join(jobs)}")
-        for key in jobs:
+        for key in jobs[::-1]:
             if not islocked(key) and active_count()-1 < maxworkers:
                 job = Thread(target=work, args=[key])
                 job.start()
