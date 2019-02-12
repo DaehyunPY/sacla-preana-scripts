@@ -42,8 +42,8 @@ def keypatt(lmafilename: str) -> str:
     then, these two files 'aq001__0000.lma' and 'aq001__0001.lma' have the same key 'aq001'; they will be preanalyzed
     as the same lma group.
     """
-    # key, _ = basename(lmafilename).rsplit('__', maxsplit=1)
-    key, _ = splitext(basename(lmafilename))
+    key, _ = basename(lmafilename).rsplit('__', maxsplit=1)
+    # key, _ = splitext(basename(lmafilename))
     return key
 
 
