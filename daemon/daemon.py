@@ -4,7 +4,7 @@ Preanalyzing daemon.
 # %% import external dependencies
 from glob import glob
 from os import remove
-from os.path import basename, exists, getmtime
+from os.path import basename, exists, getmtime, splitext
 from typing import List, Set, Mapping
 from time import sleep
 from datetime import datetime
@@ -42,7 +42,8 @@ def keypatt(lmafilename: str) -> str:
     then, these two files 'aq001__0000.lma' and 'aq001__0001.lma' have the same key 'aq001'; they will be preanalyzed
     as the same lma group.
     """
-    key, _ = basename(lmafilename).rsplit('__', maxsplit=1)
+    # key, _ = basename(lmafilename).rsplit('__', maxsplit=1)
+    key, _ = splitext(basename(lmafilename))
     return key
 
 
