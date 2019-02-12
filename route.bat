@@ -1,9 +1,9 @@
-:: run with sudo
+REM run with sudo
 set eduroam=192.168.0.1
-:: change gateway ip!
-:: set daquser=172.30.121.254
-:: set daquser=172.30.39.254
-set daquser=172.30.103.254
+REM change gateway ip!
+REM set daquser=172.30.121.254
+set daquser=172.30.39.254
+REM set daquser=172.30.103.254
 
 route delete 0.0.0.0
 route add 0.0.0.0 mask 0.0.0.0 %eduroam% metric 20
