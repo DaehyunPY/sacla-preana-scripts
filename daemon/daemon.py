@@ -42,9 +42,13 @@ def keypatt(lmafilename: str) -> str:
     then, these two files 'aq001__0000.lma' and 'aq001__0001.lma' have the same key 'aq001'; they will be preanalyzed
     as the same lma group.
     """
-    key, _ = basename(lmafilename).rsplit('__', maxsplit=1)
-    # key, _ = splitext(basename(lmafilename))
-    return key
+    name, _ = splitext(basename(lmafilename))
+    key, sub = name.rsplit('__', maxsplit=1)
+    i = int(sub) // 10 * 10
+    j = i + 10
+    # return name
+    # return key
+    return "{}__{:04d}--{:04d}".format(key, i, j)
 
 
 def targetlist() -> List[str]:
@@ -74,7 +78,10 @@ def todolist() -> Set[str]:
         print(f"[{datetime.now()}] Scanning new lma files...")
         curr = currentkeys()
         # do not read very last run and flip the order
-        yield sorted(k for k in curr if k in lastkeys and curr[k] <= lastkeys[k])
+        yield sorted(
+            (k for k in curr if k in lastkeys and curr[k] <= lastkeys[k]),
+            reverse=True,
+        )
         lastkeys = curr
         sleep(startinterval)
 
