@@ -2,9 +2,7 @@ option batch continue
 option confirm off
 
 open sftp://uedalab:lies-woof-member@xhpcfep02/
-# synchronize remote -permissions=0644 Z:\2019A8045Fukuzawa\ /work/uedalab/2019A8045Fukuzawa/
-# synchronize remote -permissions=0644 D:\2019A8045Fukuzawa\ /work/uedalab/2019A8045Fukuzawa/
-synchronize remote -permissions=0644         Z:\ /UserData/uedalab/work.uedalab/
-synchronize remote -permissions=0644         D:\ /UserData/uedalab/work.uedalab/
-synchronize remote -permissions=0644 -delete C:\ /UserData/uedalab/root.preana.lastest/
+synchronize remote -permissions=0644 D:\           /UserData/uedalab/work.uedalab/
+synchronize remote -permissions=0644 Z:\           /UserData/uedalab/work.uedalab/
+synchronize remote -permissions=0644 L:\home\data\ /UserData/uedalab/work.uedalab/
 exit

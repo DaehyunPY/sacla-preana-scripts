@@ -3,11 +3,11 @@ from daemon import call_aprocess
 
 
 lmafilelist = """
-Z:\\2019A8045Fukuzawa\\lma_files\\aq000__0000.lma
-Z:\\2019A8045Fukuzawa\\lma_files\\aq000__0001.lma
-Z:\\2019A8045Fukuzawa\\lma_files\\aq000__0002.lma
+path\\to\\file0.lma
+path\\to\\file1.lma
+path\\to\\file2.lma
 """.split()
-workingdir = "D:\\2019A8045Fukuzawa\\hit_files\\aq000_0000--0002"
+workingdir = "path\\to\\dir"
 
 call_aprocess(
     lmafilelist=lmafilelist,

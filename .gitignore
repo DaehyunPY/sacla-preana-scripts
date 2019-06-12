@@ -1,4 +1,6 @@
-*.log
-.vscode
-backup-templates/
 __pycache__
+.vscode
+*.exe
+*.log
+backup-templates/
+run.py
