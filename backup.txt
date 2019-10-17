@@ -2,7 +2,7 @@ option batch continue
 option confirm off
 
 open sftp://uedalab:lies-woof-member@xhpcfep02/
-synchronize remote -permissions=0644 D:\2019B8035Fukuzawa\           /work/uedalab/2019B8035Fukuzawa/Resorted/
-synchronize remote -permissions=0644 Z:\2019B8035Fukuzawa\           /work/uedalab/2019B8035Fukuzawa/LMA/
+synchronize remote -permissions=0644 "G:\Shared drives\SACLA 2019B8035 Fukuzawa\Experimental data\Resorted\" /work/uedalab/2019B8035Fukuzawa/Resorted/
+synchronize remote -permissions=0644 Z:\2019B8035Fukuzawa\ /work/uedalab/2019B8035Fukuzawa/LMA/
 synchronize remote -permissions=0644 L:\home\data\2019B8035Fukuzawa\ /work/uedalab/2019B8035Fukuzawa/Online/
 exit

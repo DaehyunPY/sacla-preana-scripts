@@ -26,7 +26,7 @@ def workingdir(key: str) -> str:
     """
     Working dir where a preanalyzing process works.
     """
-    return f'D:\\2019B8035Fukuzawa\\{key}'
+    return f"G:\\Shared drives\\SACLA 2019B8035 Fukuzawa\\Experimental data\\Resorted\\{key}"
 
 
 def keypatt(lmafilename: str) -> str:
